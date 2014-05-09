@@ -41,8 +41,6 @@ def main():
   refs = refs_bp.get_entry_dict()
   abbrevs = load_abbrevs("journal_files/journal_abbreviations_general.txt",reverse=args.reverse)
 
-  logging.info("FUCK IT")
-
   for ref in refs:
     if 'journal' in refs[ref]:
       # Assume that if it has a journal key, then it needs abbreviating.  I'm doing this
