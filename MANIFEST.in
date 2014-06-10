@@ -1,0 +1,2 @@
+include bibbreviate README.md
+recursive-include src/journal_files

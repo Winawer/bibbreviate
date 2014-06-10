@@ -2,13 +2,26 @@ from bibtexparser.bparser import BibTexParser
 from bibtexparser.customization import homogeneize_latex_encoding
 from bibtexparser.bwriter import to_bibtex
 from argparse import ArgumentParser
-import sys,codecs,logging,re
+import os,sys,codecs,logging,re
 
 logging.basicConfig()
 logger = logging.getLogger('bibbreviate')
 
 #TODO implement a best guess pass, based on the 'rules' of abbreviation.
 #TODO create a utility to update the journal list
+def determine_path ():
+    """Borrowed from wxglade.py"""
+    try:
+        root = __file__
+        if os.path.islink (root):
+            root = os.path.realpath (root)
+        return os.path.dirname (os.path.abspath (root))
+    except:
+        print "I'm sorry, but something is wrong."
+        print "There is no __file__ variable. Please contact the author."
+        sys.exit ()
+        
+
 
 def load_abbrevs(fn,reverse=False):
   # This load trick from http://stackoverflow.com/questions/4842057/python-easiest-way-to-ignore-blank-lines-when-reading-a-file
@@ -39,7 +52,7 @@ def main():
 
   refs_bp = BibTexParser(input.read(),customization=homogeneize_latex_encoding)
   refs = refs_bp.get_entry_dict()
-  abbrevs = load_abbrevs("journal_files/journal_abbreviations_general.txt",reverse=args.reverse)
+  abbrevs = load_abbrevs(determine_path()+"/journal_files/journal_abbreviations_general.txt",reverse=args.reverse)
 
   for ref in refs:
     if 'journal' in refs[ref]:
