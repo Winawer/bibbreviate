@@ -6,15 +6,16 @@ A python script to abbreviate journal names in a bib file using publicly availab
 Installation
 ============
 
-pip install bibbreviate
+    pip install bibbreviate
 
 or download the source and 
 
-python setup.py install
+    python setup.py install
 
 Usage
 =====
 
+```
 usage: bibbrev [-h] [-o OUTPUT] [-r] [-a ABBREVIATIONS] [-v] target
 
 positional arguments:
@@ -30,6 +31,7 @@ optional arguments:
                         Path to a file of abbreviations in the form (one per
                         line): Journal of Biological Science = J. Sci. Biol.
   -v, --verbose
+```
 
 WARNING: this package is still in beta.  I use it on my own bib files, but errors are still more than possible.  Be sure to back up your files before using.
 
