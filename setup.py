@@ -7,7 +7,7 @@ README_TEXT = readme.read()
 readme.close()
 
 setup(name = "bibbreviate",
-      version = "0.0.1",
+      version = "0.1",
       description = "Abbreviate journal titles in BibTex files.",
       long_description = README_TEXT,
       author = "Steven Hamblin",
@@ -18,7 +18,7 @@ setup(name = "bibbreviate",
       install_requires = ['setuptools','bibtexparser'],
       entry_points = { 'console_scripts' : ['bibbrev = src.bibbrev:main'] },
       classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
