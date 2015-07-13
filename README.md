@@ -35,6 +35,8 @@ optional arguments:
 
 WARNING: this package is still in beta.  I use it on my own bib files, but errors are still more than possible.  Be sure to back up your files before using.
 
+This package is also not supported on Windows.  I welcome pull requests to fix this.
+
 Development
 ===========
 
